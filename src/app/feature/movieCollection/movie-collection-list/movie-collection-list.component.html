@@ -1,0 +1,17 @@
+<h1 style="text-align: center; background-color: royalblue;">Movie Collection Controller!</h1>
+<table class="table table-dark table-striped">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Movie ID</th>
+            <th>Purchase Price</th>
+        </tr>
+        <tr *ngFor='let movieCollection of movieCollections'>
+            <td>{{movieCollection.id}}</td>
+            <td>{{movieCollection.user.id}}</td>
+            <td>{{movieCollection.movie.id}}</td>
+            <td>{{movieCollection.purchasePrice}}</td>
+        </tr>
+    </tbody>
+</table>

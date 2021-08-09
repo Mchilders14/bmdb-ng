@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MovieCollection } from '../model/movieCollection.class';
 
+const URL: string = "http://localhost:8080/api/movie-collections"
+
 @Injectable({
   providedIn: 'root'
 })

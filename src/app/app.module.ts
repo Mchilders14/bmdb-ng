@@ -6,14 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './feature/movie/movie-list/movie-list.component'; // imported separately
 import { ActorListComponent } from './feature/actor/actor-list/actor-list.component'; // imported separately
-import { CreditListComponent } from './feature/credit/credit-list/credit-list.component'; // imported separately
+import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
+import { UserListComponent } from './feature/user/user-list/user-list.component';
+import { MovieCollectionListComponent } from './feature/movieCollection/movie-collection-list/movie-collection-list.component'; // imported separately
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     ActorListComponent,
-    CreditListComponent
+    CreditListComponent,
+    UserListComponent,
+    MovieCollectionListComponent
   ],
   imports: [
     BrowserModule,
