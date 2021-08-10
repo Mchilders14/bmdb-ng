@@ -23,8 +23,17 @@ const routes: Routes = [
   { path: "actor-detail/:id", component: ActorDetailComponent },
   { path: "actor-edit/:id", component: ActorEditComponent },
   { path: "credit-list", component: CreditListComponent },
+  { path: "credit-create", component: CreditListComponent },
+  { path: "credit-detail/:id", component: CreditListComponent },
+  { path: "credit-edit/:id", component: CreditListComponent },
   { path: "user-list", component: UserListComponent },
+  { path: "user-create", component: UserListComponent },
+  { path: "user-detail/:id", component: UserListComponent },
+  { path: "user-edit/:id", component: UserListComponent },
   { path: "movie-collection-list", component: MovieCollectionListComponent },
+  { path: "movie-collection-create", component: MovieCollectionListComponent },
+  { path: "movie-collection-detail/:id", component: MovieCollectionListComponent },
+  { path: "movie-collection-edit/:id", component: MovieCollectionListComponent },
   { path: "**", component: MovieListComponent }
 ];
 
