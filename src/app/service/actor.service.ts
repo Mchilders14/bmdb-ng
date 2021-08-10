@@ -28,7 +28,7 @@ export class ActorService {
     return this.http.post(URL + "/", actor) as Observable<Actor>;
   }
 
-  update(actor: Actor): Observable<Actor> {
+  edit(actor: Actor): Observable<Actor> {
     return this.http.put(URL + "/", actor) as Observable<Actor>;
   }
 

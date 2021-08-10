@@ -4,13 +4,13 @@ export class Actor{
     firstName: string;
     lastName: string;
     gender: string;
-    birthDate: Date;
+    date: Date;
     
-    constructor(id: number = 0, firstName: string = "", lastName: string = "", gender: string = "", birthDate: Date = new Date(2000, 1, 1)){
+    constructor(id: number = 0, firstName: string = "", lastName: string = "", gender: string = "", date: Date = new Date()){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
-        this.birthDate = birthDate;
+        this.date = date;
     }
 }

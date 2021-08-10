@@ -1,4 +1,9 @@
-<h1 style="text-align: center; background-color: rgb(134, 106, 146);">Actor Controller!</h1>
+<section>
+    <h1 style="text-align: center; background-color: rgb(134, 106, 146);">Actor Controller!</h1>
+    <a routerLink='/actor-create'>
+        <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+</section>
 <table class="table table-dark table-striped">
     <tbody>
         <tr>
@@ -7,13 +12,22 @@
             <th>Last Name</th>
             <th>Gender</th>
             <th>Birthday</th>
+            <th>Action</th>
         </tr>
         <tr *ngFor='let actor of actors'>
             <td>{{actor.id}}</td>
             <td>{{actor.firstName}}</td>
             <td>{{actor.lastName}}</td>
             <td>{{actor.gender}}</td>
-            <td>{{actor.birthDate}}</td>
+            <td>{{actor.date}}</td>
+            <td>
+                <a routerLink='/actor-detail/{{actor.id}}'>
+                    <img width='20' height='20' src='assets/details.png' title='Actor Details'>
+                </a> |
+                <a routerLink='/actor-edit/{{actor.id}}'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Actor'>
+                </a> |
+            </td>
         </tr>
     </tbody>
 </table>

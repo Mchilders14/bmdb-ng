@@ -1,40 +1,40 @@
 <section class="heading">
   <span class="page-title font-weight-bold font-italic">{{title}}</span>
-  <span> | <a routerLink="/movie-list">Return to List</a></span>
-</section><p *ngIf='!movie'>Loading...</p>
-<div *ngIf='movie'>
+  <span> | <a routerLink="/actor-list">Return to List</a></span>
+</section><p *ngIf='!actor'>Loading...</p>
+<div *ngIf='actor'>
   <main class="single">
     <table class="table table-sm">
       <tr>
         <td>
-          Title:
+          Firstname:
         </td>
         <td>
-          <input [(ngModel)]="movie.title" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Year:
-        </td>
-        <td>
-          <input [(ngModel)]="movie.year" class="rounded" type="number">
+          <input [(ngModel)]="actor.firstName" class="rounded" type="text">
         </td>
       </tr>
       <tr>
         <td>
-          Rating:
+          Lastname:
         </td>
         <td>
-          <input [(ngModel)]="movie.rating" class="rounded" type="text">
+          <input [(ngModel)]="actor.lastName" class="rounded" type="text">
         </td>
       </tr>
       <tr>
         <td>
-          Director:
+          Gender:
         </td>
         <td>
-          <input [(ngModel)]="movie.director" class="rounded" type="text">
+          <input [(ngModel)]="actor.gender" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Birthday:
+        </td>
+        <td>
+          <input [(ngModel)]="actor.date" class="rounded" type="date">
         </td>
       </tr>
     </table>
