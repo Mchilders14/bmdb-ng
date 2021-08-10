@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { MovieCollection } from '../model/movieCollection.class';
+import { MovieCollection } from '../model/movie-collection.class';
 
 const URL: string = "http://localhost:8080/api/movie-collections"
 

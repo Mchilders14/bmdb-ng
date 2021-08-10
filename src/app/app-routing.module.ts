@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActorListComponent } from './feature/actor/actor-list/actor-list.component';
+import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
+import { MovieCreateComponent } from './feature/movie/movie-create/movie-create.component';
+import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
+import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.component';
+import { MovieListComponent } from './feature/movie/movie-list/movie-list.component';
+import { MovieCollectionListComponent } from './feature/movieCollection/movie-collection-list/movie-collection-list.component';
+import { UserListComponent } from './feature/user/user-list/user-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", redirectTo: "/movie-list", pathMatch: "full"} ,
+  { path: "movie-list", component: MovieListComponent },
+  { path: "movie-create", component: MovieCreateComponent },
+  { path: "movie-detail/:id", component: MovieDetailComponent },
+  { path: "movie-edit/:id", component: MovieEditComponent },
+  { path: "actor-list", component: ActorListComponent },
+  { path: "credit-list", component: CreditListComponent },
+  { path: "user-list", component: UserListComponent },
+  { path: "movie-collection-list", component: MovieCollectionListComponent },
+  { path: "**", component: MovieListComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
