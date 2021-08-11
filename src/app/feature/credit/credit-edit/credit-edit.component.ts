@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Actor } from 'src/app/model/actor.class';
 import { Credit } from 'src/app/model/credit.class';
 import { Movie } from 'src/app/model/movie.class';
@@ -19,35 +19,48 @@ export class CreditEditComponent implements OnInit {
   actors: Actor[] = [];
   movies: Movie[] = [];
   submitBtnTitle: string = 'Edit';
+  creditId: number = 0;
   
   constructor(
     private creditSvc: CreditService,
     private movieSvc: MovieService,
     private actorSvc: ActorService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
+
   ) { }
 
   ngOnInit(): void {
+
+    // get the credit to edit
+    this.route.params.subscribe(parms => this.creditId = parms["id"]);
+    this.creditSvc.get(this.creditId).subscribe(
+      resp => {
+        this.credit = resp as Credit;
+      },
+      err => { console.log(err); }
+    );
+
     // populate list of actors
     this.actorSvc.list().subscribe(
       res => {
-                this.actors = res as Actor[]; 
-                console.log("List of Actors: ", this.actors); 
-              },
+        this.actors = res as Actor[]; 
+        console.log("List of Actors: ", this.actors); 
+      },
       err => { 
-                console.log(err); 
-              }
-      );
+        console.log(err); 
+      }
+    );
 
     // populate movie
     this.movieSvc.list().subscribe(
       res => {
-                this.movies = res as Movie[]; 
-                console.log("List of Movies: ", this.movies); 
-              },
+        this.movies = res as Movie[]; 
+        console.log("List of Movies: ", this.movies); 
+      },
       err => { 
-                console.log(err); 
-              }
+        console.log(err); 
+      }
     );
   }
 
