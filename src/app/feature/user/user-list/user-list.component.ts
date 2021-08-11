@@ -17,7 +17,7 @@ export class UserListComponent implements OnInit {
     this.userSvc.list().subscribe(
       res => {
                 this.users = res as User[]; 
-                console.log("List of Movies: ", this.users); 
+                console.log("List of Users: ", this.users); 
               },
       err => { 
                 console.log(err); 
