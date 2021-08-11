@@ -1,5 +1,9 @@
-<h1 style="text-align: center; background-color: royalblue;">User Controller!</h1>
-<table class="table table-dark table-striped">
+<section>
+    <h1 style="text-align: center; background-color:rgb(134, 106, 146);">User Controller!</h1>
+    <a routerLink='/user-create'>
+        <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+</section><table class="table table-dark table-striped">
     <tbody>
         <tr>
             <th>ID</th>
@@ -10,6 +14,7 @@
             <th>Phone Number</th>
             <th>Email</th>
             <th>Movie Collection Value</th>
+            <th>Action</th>
         </tr>
         <tr *ngFor='let user of users'>
             <td>{{user.id}}</td>
@@ -20,6 +25,14 @@
             <td>{{user.phoneNumber}}</td>
             <td>{{user.email}}</td>
             <td>{{user.collectionValue}}</td>
+            <td>
+                <a routerLink='/user-detail/{{user.id}}'>
+                    <img width='20' height='20' src='assets/details.png' title='User Details'>
+                </a> |
+                <a routerLink='/user-edit/{{user.id}}'>
+                    <img width='20' height='20' src='assets/pencil-icon.png' title='Edit User'>
+                </a>
+            </td>
         </tr>
     </tbody>
 </table>
